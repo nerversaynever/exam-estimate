@@ -3,18 +3,33 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "2021全国管理类联考在线估分",
-				"navigationBarTextStyle": "#fff"
+				"navigationStyle": "custom"
 			}
+		},
+		{
+			"path": "pages/answer/answer",
+			"style": {}
+		},
+		{
+			"path": "pages/scoreAndRank/scoreAndRank",
+			"style": {
+				"navigationBarTitleText": "估分成绩单",
+				"enablePullDownRefresh": false
+			}
+
+		},
+		{
+			"path": "pages/probability/probability",
+			"style": {
+
+			}
+
 		}
-	    ,{
-            "path" : "pages/answer/answer",
-            "style" : {}
-        }
-    ],
+
+	],
 	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
+		"navigationBarTextStyle": "#fff",
+		"navigationBarTitleText": "2021全国管理类联考在线估分",
 		"navigationBarBackgroundColor": "#db6553",
 		"backgroundColor": "#db6553"
 	}

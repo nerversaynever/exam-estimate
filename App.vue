@@ -38,5 +38,8 @@
 	.defultColor{
 		color: #db6553!important;
 	}
+	.orange{
+		color: orange !important;
+	}
 	/*每个页面公共css */
 </style>
