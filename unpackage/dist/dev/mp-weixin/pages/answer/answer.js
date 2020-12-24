@@ -217,10 +217,9 @@ var _mescrollMixins = _interopRequireDefault(__webpack_require__(/*! @/component
       {
         number: 5,
         text: "测试",
-        operateType: '' }],
+        operateType: '' }] };
 
-      operateType: '' //操作类型
-    };
+
 
   },
   methods: {
@@ -252,8 +251,8 @@ var _mescrollMixins = _interopRequireDefault(__webpack_require__(/*! @/component
 
     },
     //作答
-    responde: function responde(val) {
-      this.operateType = val;
+    responde: function responde(val, index) {
+      this.questionList[index].operateType = val;
     } },
 
   onPageScroll: function onPageScroll(e) {

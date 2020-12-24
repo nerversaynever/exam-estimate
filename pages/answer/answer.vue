@@ -15,18 +15,18 @@
 		<view class="questions">
 			<view class="des defultColor">{{tabList[tabCur]}}</view>
 			<view class="questions-con">
-				<question-item v-for="(item,index) in questionList" :info="item" :type="tabCur" :index="index" :list="questionList"></question-item>
-				<!-- <view class="questions-item" v-for="(item,index) in questionList">
+				<!-- <question-item v-for="(item,index) in questionList" :info="item" :type="tabCur" :index="index" :list="questionList"></question-item> -->
+				<view class="questions-item" v-for="(item,index) in questionList">
 					<view class="number cu-tag">第{{item.number}}题</view>
 					<view class="text">{{item.text}}</view>
 					<view class="operate  flex align-center" v-if="tabCur!=3">
-						<button class="flex-sub btn" :class="{'success':operateType=='success'}" @tap="responde('success')">√ 答对了</button>
-						<button class="flex-sub btn" :class="{'error':operateType=='error'}" @tap="responde('error')">× 答错了</button>
+						<button class="flex-sub btn" :class="{'success':item.operateType=='success'}" @tap="responde('success',index)">√ 答对了</button>
+						<button class="flex-sub btn" :class="{'error':item.operateType=='error'}" @tap="responde('error',index)">× 答错了</button>
 					</view>
 					<view class="mark flex" v-if="tabCur==3">
 						<text>自我评分</text><input type="number" class="input-number flex-sub" />
 					</view>
-				</view> -->
+				</view>
 			</view>
 		</view>
 		
@@ -87,7 +87,6 @@
 					text:"测试",
 					operateType:''
 				}],
-				operateType:'',//操作类型
 				
 			};
 		},
@@ -120,8 +119,8 @@
 				});
 			},
 			//作答
-			responde(val){
-				this.operateType=val;
+			responde(val,index){
+				this.questionList[index].operateType=val;
 			}
 		},
 		onPageScroll(e) {
