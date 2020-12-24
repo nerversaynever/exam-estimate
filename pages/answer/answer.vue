@@ -28,11 +28,27 @@
 					</view>
 				</view>
 			</view>
-		</view>
-		
+		</view>		
 		</mescroll-body>
 		<view class="bottom-operate">
-			<view class="defaultBtn" @tap="viewScore">估分数    查排名    评概率</view>
+			<view class="defaultBtn" @tap="viewScore"  data-target="Modal">估分数    查排名    评概率</view>
+		</view>
+		<view class="cu-modal" :class="modalName=='Modal'?'show':''">
+			<view class="cu-dialog">
+				<view class="cu-bar justify-end">
+					<view class="content">交卷提示</view>
+					<view class="action" @tap="hideModal">
+						<text class="cuIcon-close text-red"></text>
+					</view>
+				</view>
+				<view class="modal-con">
+					<view class="title">提前交卷后，将不保留做题痕迹！</view>
+					<view class="operate flex">
+						<button class="submitBtn flex-sub" @click="submit">交卷</button>
+						<button class="defaultBtn flex-sub" @click="hideModal">继续估分</button>
+					</view>
+				</view>
+			</view>
 		</view>
 	</view>
 </template>
@@ -87,6 +103,7 @@
 					text:"测试",
 					operateType:''
 				}],
+				modalName:''
 				
 			};
 		},
@@ -113,11 +130,19 @@
 				this.tabCur=index;
 			},
 			//查看分数和排名
-			viewScore(){
+			viewScore(e){
+				this.modalName = e.currentTarget.dataset.target;
+			},
+			//确定交卷
+			submit(){
 				uni.navigateTo({
 					url: "/pages/scoreAndRank/scoreAndRank"
 				});
 			},
+			hideModal(e) {
+				this.modalName = null
+			},
+			
 			//作答
 			responde(val,index){
 				this.questionList[index].operateType=val;
@@ -244,5 +269,19 @@
 			border-radius: 0;
 		}
 	}
+	.modal-con{
+		.operate{
+			margin: 40rpx;
+			button+button{
+				margin-left: 20rpx;
+			}
+			.defaultBtn,.submitBtn{
+				margin-top: 30rpx;
+				line-height: 60rpx;
+				border-radius: 45rpx;
+			}
+		}
+	}
+	
 
 </style>

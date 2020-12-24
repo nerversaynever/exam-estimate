@@ -171,6 +171,22 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 var _mescrollMixins = _interopRequireDefault(__webpack_require__(/*! @/components/mescroll-uni/mescroll-mixins.js */ 25));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var questionItem = function questionItem() {__webpack_require__.e(/*! require.ensure | components/questionItem */ "components/questionItem").then((function () {return resolve(__webpack_require__(/*! @/components/questionItem.vue */ 83));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 {
   name: 'answer',
@@ -217,8 +233,9 @@ var _mescrollMixins = _interopRequireDefault(__webpack_require__(/*! @/component
       {
         number: 5,
         text: "测试",
-        operateType: '' }] };
+        operateType: '' }],
 
+      modalName: '' };
 
 
   },
@@ -245,11 +262,19 @@ var _mescrollMixins = _interopRequireDefault(__webpack_require__(/*! @/component
       this.tabCur = index;
     },
     //查看分数和排名
-    viewScore: function viewScore() {
+    viewScore: function viewScore(e) {
+      this.modalName = e.currentTarget.dataset.target;
+    },
+    //确定交卷
+    submit: function submit() {
       uni.navigateTo({
         url: "/pages/scoreAndRank/scoreAndRank" });
 
     },
+    hideModal: function hideModal(e) {
+      this.modalName = null;
+    },
+
     //作答
     responde: function responde(val, index) {
       this.questionList[index].operateType = val;

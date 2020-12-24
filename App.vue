@@ -26,7 +26,10 @@
 		font-size: 32upx;
 		display: block;
 	}
-	
+	.submitBtn{
+		background: #39b54a;
+		color: #ffffff;
+	}
 	.cancelBtn {
 		background: #f0f0f0;
 		color: #db6553;

@@ -127,4 +127,15 @@ page,
 .bottom-operate .defaultBtn {
   border-radius: 0;
 }
+.modal-con .operate {
+  margin: 40rpx;
+}
+.modal-con .operate button + button {
+  margin-left: 20rpx;
+}
+.modal-con .operate .defaultBtn, .modal-con .operate .submitBtn {
+  margin-top: 30rpx;
+  line-height: 60rpx;
+  border-radius: 45rpx;
+}
 

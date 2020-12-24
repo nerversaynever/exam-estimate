@@ -37,7 +37,7 @@
 					<image src="/static/down.png" mode="widthFix" class="down"></image>
 				</view>
 			</view>
-			<view class="submitBtn margin-top-lg" @tap="submit">根据估分查上岸概率</view>
+			<view class="defaultBtn margin-top-lg" @tap="submit">根据估分查上岸概率</view>
 		</view>
 		<view class="estimate-result" v-if="isViewResult">
 			<view class="title text-center">北京大学光华学院{{formInfo.result=='pass'?"2021复试线":"往年分数线"}}</view>

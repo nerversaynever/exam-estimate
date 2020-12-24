@@ -4569,6 +4569,10 @@ scroll-view.cu-steps .cu-item {
 	font-size: 32rpx;
 	display: block;
 }
+.submitBtn{
+	background: #39b54a;
+	color: #ffffff;
+}
 .cancelBtn {
 	background: #f0f0f0;
 	color: #db6553;

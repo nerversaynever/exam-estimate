@@ -1,9 +1,7 @@
 <template>
 	<!-- <view class="page-view"> -->
 		<view class="index">
-			<image src="/static/banner.png" mode="widthFix" class="banner"></image>
-			<!-- <image class="logo" src="/static/logo.png"></image> -->
-			
+			<image src="/static/banner.png" mode="widthFix" class="banner"></image>			
 			<view class="index-con-bottom">
 				<view><image src="/static/hat.png" mode="widthFix" class="icon"></image>适合专业</view>
 				<view class="title">MBA/MEM/MPA/EMBA</view>
@@ -11,16 +9,6 @@
 				<button class="whiteBtn" @click="estimate">立即估分</button>
 				<button class="whiteBtn" @tap="showModal" data-target="Modal">直接查上岸概率</button>
 			</view>
-			<!-- <view class="index-con" >
-				
-				<text class="title">2021管理类联考</text>
-				<text class="name">在线估分</text>
-				<text class="des">查排名 估上岸概率</text>
-				<view class="label shadow-warp">
-					适合专业
-					MBA/MEM/MPA/EMBA
-				</view>
-			</view> -->
 			<view class="cu-modal" :class="modalName=='Modal'?'show':''">
 				<view class="cu-dialog">
 					<view class="cu-bar justify-end">
